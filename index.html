@@ -7,31 +7,21 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
-        <style>
-            .div_1 {
-                background-color: red;
-            }
-            .div_2 {
-                background-color: green;
-            }
-        </style>
-
     </head>
 
     <body>
-
-        <div id="div">Text</div>
-
+        
+        <div id="div">Block</div>
+        
         <script>
-            let div
-            div = prompt("1 or 2???")
-            while (div != 1 && div != 2)
-            {
-                alert("1 or 2!!!!")
-                div = prompt("1 or 2???")
-            }
-            $('#div').attr('class', 'div_' + div)
-            alert($('#div')[0].className)
+            $('#div').css('font-size', '25px')
+            $('#div').css('background', 'red')
+
+            $('#div').css('width', '250')
+
+            $('#div').css('height', function() {
+                return  $(this).width()
+            })
         </script>
 
     </body>

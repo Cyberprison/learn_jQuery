@@ -11,21 +11,19 @@
 
     <body>
         
-        <div id="div">
+        <div id="div" style="background-color: red;">
             Block
             <p>Paragraph</p>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
         </div>
         
         <script>
-            alert($('#div').html())
-            alert($('#div').text())
+            let block = $('#div').clone()
 
-            $('p').html('New Paragraph')
+            block.html('<p>Новый абзац</p>')
+            block.css('font-size', '40px')
+            block.css('width', '200')
+
+            $('body').append(block)
         </script>
 
     </body>

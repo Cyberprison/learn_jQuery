@@ -11,22 +11,20 @@
 
     <body>
         
-        <div id="div_1">
-            Block_1
-        </div>
-
-        <div id="div_2">
-            Block_2
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+        <div id="div">
+            Block
         </div>
 
         <script>
-            $('#div_1').remove()
-            $('ul').empty()
+            $('#div').append('<p>append</p>')
+            $('<p>appendTo</p>').appendTo('#div')
+
+            $('#div').prepend('<p>prepend</p>')
+            $('<p>prependTo</p>').prependTo('#div')
+
+            $('<p>insertAfter</p>').insertAfter('#div')
+            $('<p>insertBefore</p>').insertBefore('#div')
+
         </script>
 
     </body>

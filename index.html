@@ -7,47 +7,36 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
-        <script>
-            function valid() {
-                let state = $('input[name="sex"]:checked').val()
-
-                if(!state) {
-                    return $('#message').html("<font style='color:red'>Укажите ваш пол</font>")
-                    $('#img').hide()
-                }
-
-                $('#message').hide();
-
-                alert(state)
-
-                if(state == "male") {
-                    $("#img").show();
-                }
- 
-                let test = $('div, p')
-            }
-        </script>
 
     </head>
 
     <body>
 
-        <form name="form" id="form">
-            <label for="female">Женский</label>
-            <input type="radio" id="female" name="sex" value="female"/>
-            <br/>
+        <img src="1.jpg" title="Изображение 1" alt="Изображение 1"/>
+        <br/>
+        <img src="2.jpg" title="Изображение 2"/>
+        <br/>
+        <img src="3.jpg" title="Изображение 3"/>
+        <br/>
+        <img src="4.jpg" title="Изображение 4" alt="Изображение 4"/>
+        <br/>
+
+        <script>
             
-            <label for="male">Мужской</label>
-            <input type="radio" id="male" name="sex" value="male"/>
-            <br/>
+            alert($('img').not('img[alt]').length)
 
-            <input type="button" id="done" onclick="return valid()" value="Готово"/>
-            <br/>
+            //найти все теги имаджи, у которых нет атрибута альт
+            $(':not(img[alt])').attr('alt', 'jQuery');
 
-            <span id="message"></span>
-        </form>
+            let elements = $('img')
+            let text = ''
+            for(let i = 0; i + 1 <= elements.length; i++) {
+                text += elements[i].alt + '\n'
+            }
 
-        <img src="1.jpg" id="img" style="display: none;"/>
+            alert(text)
+
+        </script>
 
     </body>
 </html>

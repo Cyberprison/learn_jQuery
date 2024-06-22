@@ -8,48 +8,38 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
         <script>
+            function hideComments()
+            {
+                $('#show').show();
+                $('#hide').hide();
+                $('#comments').hide(1000)      
+            }
+
+            function showComments()
+            {
+                $('#show').hide();
+                $('#hide').show();
+                $('#comments').show(1000)      
+            }
+
             $(document).ready(function()
             {
-                $(document).on('click', '#a', function() 
-                {
-                    let form = $('#form');
-                    form.css('display', 'block');
-                    let a = $('#a');
-                    a.css('display', 'none');
-                });
-
-                $(document).on('click', 'button', function()
-                {
-                    let comment = $('#textarea').val();
-                    $('<p>' + comment + '</p>').appendTo('#comments');
-                    
-                    let form = $('#form');
-                    form.css('display', 'none');
-
-                    //не знаю как очистить форму, после ввода
-                    //типо чтобы не было старого текста
-
-                    let a = $('#a');
-                    a.css('display', 'block');
-                });
-            });
+                $('#hide').bind('click', hideComments);
+                $('#show').bind('click', showComments);
+            })
         </script>
 
     </head>
 
     <body>
+        <a href="#" id="hide" onclick="return false">hide</a>
+        <a href="#" id="show" style="display: none;" onclick="return false">show</a>
+
         <div id="comments">
             <p>Comment 1</p>
             <p>Comment 2</p>
             <p>Comment 3</p>
         </div>
         
-        <form name="form" action="#" method="post" id="form" style="display: none;" onsubmit="return false">
-            <textarea id="textarea" name="textarea" ></textarea>
-            <button type="submit" name="button" id="button">Enter</button>
-        </form>
-
-        <a href="#" onclick="false" id="a">Add comment</a>
-
     </body>
 </html>

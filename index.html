@@ -11,20 +11,10 @@
 
     <body>
         
-        <div id="div">
-            Block
-        </div>
+        <input name="text" type="text" id="text">
+        <button onclick="alert($('#text').val())">Enter</button>
 
         <script>
-            $('#div').append('<p>append</p>')
-            $('<p>appendTo</p>').appendTo('#div')
-
-            $('#div').prepend('<p>prepend</p>')
-            $('<p>prependTo</p>').prependTo('#div')
-
-            $('<p>insertAfter</p>').insertAfter('#div')
-            $('<p>insertBefore</p>').insertBefore('#div')
-
         </script>
 
     </body>

@@ -13,17 +13,16 @@
         <div class="test">Test 1</div>
         <div class="test">Test 2</div>
         <p class="test">Test 3</p>
+        <p class="test">Test 4</p>
+        <img src="" alt="1">
+        <img src="" alt="2" title="2">
 
         <script>
-            let test = $('div.test');
-            
-            for(let i = 0; i + 1 <= test.length; i++) {
-                test[i].style.color = "red";
-            }
+            let testDiv = $('div');
+            alert(testDiv.length);
 
-            //сделает текст зеленым через 2 сек после загрузки дока
-            setTimeout("$('p.test').get(0).style.color = 'red'", 2000);
-
+            let imgTitle = $('img[title]');
+            alert(imgTitle.length)
         </script>
 
     </body>

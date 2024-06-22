@@ -11,17 +11,21 @@
 
     <body>
         
-        <div id="div">Block</div>
+        <div id="div">
+            Block
+            <p>Paragraph</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
         
         <script>
-            $('#div').css('font-size', '25px')
-            $('#div').css('background', 'red')
+            alert($('#div').html())
+            alert($('#div').text())
 
-            $('#div').css('width', '250')
-
-            $('#div').css('height', function() {
-                return  $(this).width()
-            })
+            $('p').html('New Paragraph')
         </script>
 
     </body>

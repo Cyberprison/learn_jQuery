@@ -11,28 +11,22 @@
 
     <body>
         
-        <div id="div">
-            Block
+        <div id="div_1">
+            Block_1
         </div>
 
         <div id="div_2">
-            
+            Block_2
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
         </div>
 
-        <img src="1.jpg" alt="1"/>
-        <img src="2.jpg" alt="2"/>
-        <img src="3.jpg" alt="3"/>
-
-        <br/>
-
-        <a href="">1</a>
-        <a href="">2</a> 
-
         <script>
-            $('div').append('<p>New paragraph</p>')
-            $('img').appendTo($('div'))
-
-            $('a').wrap('<div style="display: none"></div>')
+            $('#div_1').remove()
+            $('ul').empty()
         </script>
 
     </body>

@@ -10,13 +10,13 @@
     </head>
 
     <body>
-        <div id="test" onclick="$('#test').hide()">Test</div>
-        <div id="test" onclick="jQuery('#test').hide()">Test</div>
+        <div id="test">Test</div>
 
-        <script type="text/javascript">
-            var s = "   string   ";
-            alert(s);
-            alert(jQuery.trim(s));
+        <script>
+            let testIdJS = document.getElementById('test');
+            let testIdJQuery = $('#test');
+
+            console.log(testIdJQuery.html());
         </script>
 
     </body>

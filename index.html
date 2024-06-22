@@ -8,35 +8,48 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
         <script>
-            function incSize(event){
-                let tempVar = event.target.style.width
-                let widthVar = Number(tempVar.substring(0, tempVar.length - 2))
-
-                event.target.style.width = widthVar + 5 + 'px'
-
-                //$(event.target).unbind()
-
-                $("<p>Координаты точки при нажании: x=" + event.screenX + "px y=" + event.screenY + "px</p>").insertAfter($('div:last'))
-            };
-
-            $(document).ready(function(){
-                $('div').bind('click', incSize);
-
-                $(document).on('click', 'p', function(){
-                    alert(112);
+            $(document).ready(function()
+            {
+                $(document).on('click', '#a', function() 
+                {
+                    let form = $('#form');
+                    form.css('display', 'block');
+                    let a = $('#a');
+                    a.css('display', 'none');
                 });
-            })
+
+                $(document).on('click', 'button', function()
+                {
+                    let comment = $('#textarea').val();
+                    $('<p>' + comment + '</p>').appendTo('#comments');
+                    
+                    let form = $('#form');
+                    form.css('display', 'none');
+
+                    //не знаю как очистить форму, после ввода
+                    //типо чтобы не было старого текста
+
+                    let a = $('#a');
+                    a.css('display', 'block');
+                });
+            });
         </script>
 
     </head>
 
     <body>
+        <div id="comments">
+            <p>Comment 1</p>
+            <p>Comment 2</p>
+            <p>Comment 3</p>
+        </div>
         
-        <div style="width: 50px; height: 50px; background: white; border: 1px black solid;"></div>
-        <div style="width: 50px; height: 50px; background: blue; border: 1px black solid;"></div>
-        <div style="width: 50px; height: 50px; background: red; border: 1px black solid;"></div>
+        <form name="form" action="#" method="post" id="form" style="display: none;" onsubmit="return false">
+            <textarea id="textarea" name="textarea" ></textarea>
+            <button type="submit" name="button" id="button">Enter</button>
+        </form>
 
-
+        <a href="#" onclick="false" id="a">Add comment</a>
 
     </body>
 </html>

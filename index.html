@@ -13,13 +13,18 @@
 
                 if(!state) {
                     return $('#message').html("<font style='color:red'>Укажите ваш пол</font>")
+                    $('#img').hide()
                 }
+
+                $('#message').hide();
 
                 alert(state)
 
-                if(state = 'male') {
+                if(state == "male") {
                     $("#img").show();
                 }
+
+                let test = $('div, p')
             }
         </script>
 

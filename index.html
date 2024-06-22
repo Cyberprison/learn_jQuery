@@ -7,15 +7,36 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
+        <script>
+            function incSize(event){
+                let tempVar = event.target.style.width
+                let widthVar = Number(tempVar.substring(0, tempVar.length - 2))
+
+                event.target.style.width = widthVar + 5 + 'px'
+
+                //$(event.target).unbind()
+
+                $("<p>Координаты точки при нажании: x=" + event.screenX + "px y=" + event.screenY + "px</p>").insertAfter($('div:last'))
+            };
+
+            $(document).ready(function(){
+                $('div').bind('click', incSize);
+
+                $(document).on('click', 'p', function(){
+                    alert(112);
+                });
+            })
+        </script>
+
     </head>
 
     <body>
         
-        <input name="text" type="text" id="text">
-        <button onclick="alert($('#text').val())">Enter</button>
+        <div style="width: 50px; height: 50px; background: white; border: 1px black solid;"></div>
+        <div style="width: 50px; height: 50px; background: blue; border: 1px black solid;"></div>
+        <div style="width: 50px; height: 50px; background: red; border: 1px black solid;"></div>
 
-        <script>
-        </script>
+
 
     </body>
 </html>
